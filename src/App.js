@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Balance from "./components/Balance";
 import Fields from "./components/Fields";
@@ -14,13 +15,13 @@ const INITIAL_EXPENSES = [
     id: 'e2',
     title: "Electricity Bill",
     amount: 2789,
-    date: new Date("2023-02-16"),
+    date: new Date("2023-02-10"),
   },
   {
     id: 'e3',
     title: "Sample",
     amount: 500,
-    date: new Date("2023-02-10"),
+    date: new Date("2023-02-16"),
   },
   {
     id: 'e4',
@@ -28,13 +29,32 @@ const INITIAL_EXPENSES = [
     amount: 1100,
     date: new Date("2023-02-26"),
   },
+  {
+    id: 'e5',
+    title: "Salary for March",
+    amount: 8000,
+    date: new Date("2023-03-04"),
+  },
 ]
 
 function App() {
-  return <div className="flex flex-col gap-8 justify-center items-center">
-    <Form />
+
+  // state for updating the expenses array
+  const [initialExpenses, setInitialExpenses] = useState(INITIAL_EXPENSES);
+
+  // add new field to the initial expenses array
+  const addNewField = (newField) => {
+    setInitialExpenses(prevFields => {
+      console.log([newField, ...prevFields]);
+      return [newField, ...prevFields];
+    });
+
+  };
+
+  return <div className="flex flex-col gap-8 justify-center items-center mb-8">
+    <Form handleNewField={addNewField} />
     <Balance />
-    <Fields expenses={INITIAL_EXPENSES} />
+    <Fields expenses={initialExpenses} />
   </div>;
 }
 

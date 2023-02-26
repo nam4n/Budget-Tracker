@@ -1,6 +1,6 @@
 const Filter = () => {
   return (
-    <div className="filter w-[600px] p-2 rounded-xl flex justify-between items-center text-white">
+    <div className="filter w-[600px] p-2 rounded-xl flex justify-between items-center text-white mb-2">
       <p className="font-extrabold text-2xl ">Filter By</p>
 
       <div className="filter-selects flex gap-2">

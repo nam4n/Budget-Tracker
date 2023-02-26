@@ -1,18 +1,11 @@
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const FieldItem = ({title, amount, date}) => {
-//   let newDay = new Date();
-//   const month = newDay
-//     .toLocaleString("en-US", { month: "long" })
-//     .trim()
-//     .slice(0, 3);
-//   const year = newDay.getFullYear();
-//   const day = newDay.toLocaleString("en-US", { day: "2-digit" });
+const FieldItem = (props) => {
 
-const month = date.toLocaleString("en-US", {month: "long"}).slice(0,3);
-const day = date.toLocaleString("en-US", {day: "2-digit"});
-const year = date.getFullYear();
+const month = props.date.toLocaleString("en-US", {month: "long"}).slice(0,3);
+const day = props.date.toLocaleString("en-US", {day: "2-digit"});
+const year = props.date.getFullYear();
 
   return (
     <li className="field shadow-sm shadow-sky-400 bg-slate-50 rounded-xl p-1 flex items-center justify-between gap-2 w-[600px]">
@@ -23,10 +16,10 @@ const year = date.getFullYear();
       </div>
       <div className="field-description flex justify-between w-full">
         <div className="field-title text-xl font-bold">
-          {title}
+          {props.title}
         </div>
         <div className="field-amount bg-red-400 px-6 py-1 text-xl text-white font-bold rounded-lg mr-1">
-          ₹{amount}
+          ₹{props.amount}
         </div>
       </div>
       <div className="field-actions flex gap-1 bg-white p-2 rounded-lg">
