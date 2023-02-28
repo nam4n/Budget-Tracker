@@ -35,6 +35,7 @@ const INITIAL_EXPENSES = [
     amount: 8000,
     date: new Date("2023-03-04"),
   },
+
 ]
 
 function App() {
@@ -43,11 +44,14 @@ function App() {
   const [initialExpenses, setInitialExpenses] = useState(INITIAL_EXPENSES);
 
   // add new field to the initial expenses array
-  const addNewField = (newField) => {
-    setInitialExpenses(prevFields => {
-      console.log([newField, ...prevFields]);
-      return [newField, ...prevFields];
+  const addNewField = (field) => {
+    
+    setInitialExpenses(pV => {
+      return [field, ...pV];
     });
+
+    // console.log(initialExpenses);
+
 
   };
 
@@ -59,3 +63,5 @@ function App() {
 }
 
 export default App;
+
+

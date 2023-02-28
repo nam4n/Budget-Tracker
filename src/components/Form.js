@@ -42,8 +42,7 @@ const Form = ({handleNewField}) => {
     };
 
     handleNewField(newField);
-
-
+    
     setInputDate("");
     setInputPrice("");
     setInputTitle("");
