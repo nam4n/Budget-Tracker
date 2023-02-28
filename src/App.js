@@ -21,7 +21,7 @@ const INITIAL_EXPENSES = [
     id: 'e3',
     title: "Sample",
     amount: 500,
-    date: new Date("2023-02-16"),
+    date: new Date("2022-02-16"),
   },
   {
     id: 'e4',
@@ -49,9 +49,6 @@ function App() {
     setInitialExpenses(pV => {
       return [field, ...pV];
     });
-
-    // console.log(initialExpenses);
-
 
   };
 

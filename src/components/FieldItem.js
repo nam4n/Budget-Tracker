@@ -9,9 +9,6 @@ const month = propDate.toLocaleString("en-US", {month: "long"}).slice(0,3);
 const day = propDate.toLocaleString("en-US", {day: "2-digit"});
 const year = propDate.getFullYear();
 
-// const month = "Feb";
-// const day = 29;
-// const year = "2023";
 
   return (
     <li className="field shadow-sm shadow-sky-400 bg-slate-50 rounded-xl p-1 flex items-center justify-between gap-2 w-[600px]">
