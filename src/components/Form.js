@@ -80,6 +80,7 @@ const Form = ({handleNewField}) => {
                 className="p-2 rounded-md border border-solid w-[250px]"
                 value={inputPrice}
               />
+              <p className="amount-info text-[10px] font-semibold">Add '+' or '-' for income/expense</p>
             </div>
           </div>
 

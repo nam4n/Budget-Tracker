@@ -8,7 +8,7 @@ const INITIAL_EXPENSES = [
   {
     id: 'e1',
     title: "Invested in Gold ETF",
-    amount: 983,
+    amount: '-983',
     date: new Date("2023-02-06"),
   },
   {
@@ -39,6 +39,13 @@ const INITIAL_EXPENSES = [
 ]
 
 function App() {
+
+  // state for balances
+  const [balance, setBalance] = useState(87100);
+
+  const [monthExp, setMonthExp] = useState(0);
+  const [monthIncome, setMonthIncome] = useState(8000);
+
 
   // state for updating the expenses array
   const [initialExpenses, setInitialExpenses] = useState(INITIAL_EXPENSES);
